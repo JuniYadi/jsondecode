@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JSON Decode</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Simple JSON Decode</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col col-md-6">
+                        <textarea class="form-control" rows="20" name="data" id="data" onchange="decode()"></textarea>
+    
+                    </div>
+                    <div class="col col-md-6">
+                        <textarea class="form-control" rows="20" name="response" id="response"></textarea>
+    
+                    </div>
+                </div>
+    
+                <p>Kami tidak menyimpan data yang di convert pada tools ini, semua data terproses melalui browser dengan javascript. Jika anda ingin menggunakan di komputer pribadi anda, silahkan fork repo kami. <a href="https://github.com/JuniYadi/jsondecode">GitHub @ Juni Yadi - 2020</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function decode() {
+            const data = document.getElementById('data').value
+            const parse = JSON.stringify(JSON.parse(data), null, 2)
+            document.getElementById('response').innerHTML = parse
+        }
+    </script>
+</body>
+
+</html>
